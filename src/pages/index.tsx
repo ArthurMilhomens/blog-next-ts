@@ -16,7 +16,7 @@ export default function Home({ product }:HomeProps) {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Home | Blog</title>
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
