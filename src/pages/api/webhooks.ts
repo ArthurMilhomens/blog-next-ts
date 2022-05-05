@@ -44,7 +44,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         const type = event.type;
 
-        if (!relevantEvents.has(type)) {
+        if (relevantEvents.has(type)) {
             try {
                 switch (type) {
                     case 'customer.subscription.updated':
@@ -74,6 +74,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                         throw new Error('Unhandled event.')
                 }
             } catch (err) {
+                console.log('alo - ', err)
                 return res.json({ error: 'Webhook handler failed.'})
             }
         }
